@@ -1,0 +1,26 @@
+<section class="phx-hero">
+  <h1>Add Names</h1>
+
+  <form phx-submit="add-name">
+    <input type="text" name="name" value="<%= @name %>" placeholder="add people!" />
+    <button type="submit" phx-disable-with="Adding name">Add Name</button>
+  </form>
+
+  <div id="results">
+    <%= for name <- @names do %>
+        <div value="<%= name %>"><%= name %></div>
+    <% end %>
+  </div>
+
+  <div class="flexo">
+    <button class="button-left" phx-click="select-special">Select Name</button>
+    <button class="button-right" phx-click="select-name"></button>
+  </div>
+
+  <div id="winner">
+    <h1><%= @selectedName %></h1>
+  </div>
+
+</section>
+
+<section class="row"></section>
